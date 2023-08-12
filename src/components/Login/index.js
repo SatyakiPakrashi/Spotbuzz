@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const Login = ({ setIsAuthenticated }) => {
-  const adminEmail = 'admin@example.com';
+  const adminEmail = 'spotbuzz@example.com';
   const adminPassword = 'qwerty';
 
   const [email, setEmail] = useState('admin@example.com');

@@ -4,14 +4,14 @@ import Swal from 'sweetalert2';
 const Add = ({ employees, setEmployees, setIsAdding }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [salary, setSalary] = useState('');
-  const [date, setDate] = useState('');
+  const [country, setCountry] = useState('');
+  const [score, setScore] = useState('');
+  const [position, setPosition] = useState('');
 
   const handleAdd = e => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email || !salary || !date) {
+    if (!firstName || !lastName || !country || !score || !position) {
       return Swal.fire({
         icon: 'error',
         title: 'Error!',
@@ -25,9 +25,9 @@ const Add = ({ employees, setEmployees, setIsAdding }) => {
       id,
       firstName,
       lastName,
-      email,
-      salary,
-      date,
+      country,
+      score,
+      position,
     };
 
     employees.push(newEmployee);
@@ -47,7 +47,7 @@ const Add = ({ employees, setEmployees, setIsAdding }) => {
   return (
     <div className="small-container">
       <form onSubmit={handleAdd}>
-        <h1>Add Employee</h1>
+        <h1>Add Player</h1>
         <label htmlFor="firstName">First Name</label>
         <input
           id="firstName"
@@ -64,29 +64,29 @@ const Add = ({ employees, setEmployees, setIsAdding }) => {
           value={lastName}
           onChange={e => setLastName(e.target.value)}
         />
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Country</label>
         <input
-          id="email"
-          type="email"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          id="country"
+          type="country"
+          name="country"
+          value={country}
+          onChange={e => setCountry(e.target.value)}
         />
-        <label htmlFor="salary">Salary ($)</label>
+        <label htmlFor="salary">Score</label>
         <input
-          id="salary"
+          id="score"
           type="number"
-          name="salary"
-          value={salary}
-          onChange={e => setSalary(e.target.value)}
+          name="score"
+          value={score}
+          onChange={e => setScore(e.target.value)}
         />
-        <label htmlFor="date">Date</label>
+        <label htmlFor="date">Position</label>
         <input
-          id="date"
-          type="date"
-          name="date"
-          value={date}
-          onChange={e => setDate(e.target.value)}
+          id="position"
+          type="text"
+          name="position"
+          value={position}
+          onChange={e => setPosition(e.target.value)}
         />
         <div style={{ marginTop: '30px' }}>
           <input type="submit" value="Add" />
